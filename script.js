@@ -13,6 +13,17 @@
     let stars = [];
     let shootingStars = [];
     let animId;
+    let mouse = { x: null, y: null, active: false };
+
+    canvas.addEventListener('mouseenter', () => mouse.active = true);
+    canvas.addEventListener('mouseleave', () => mouse.active = false);
+    canvas.addEventListener('mousemove', (e) => {
+        if (mouse.active) {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        }
+    });
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -53,6 +64,23 @@
 
     function drawStars(time) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw interactive constellations
+        if (mouse.active && mouse.x !== null) {
+            stars.forEach(star => {
+                const dx = star.x - mouse.x;
+                const dy = star.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(mouse.x, mouse.y);
+                    ctx.lineTo(star.x, star.y);
+                    ctx.strokeStyle = `rgba(212, 168, 83, ${0.4 * (1 - dist / 150)})`;
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+            });
+        }
 
         // Draw static stars
         stars.forEach(star => {
@@ -100,7 +128,6 @@
         createShootingStar();
     }
 
-    let lastTime = 0;
     function animateStars(timestamp) {
         drawStars(timestamp);
         animId = requestAnimationFrame(animateStars);
@@ -539,6 +566,63 @@
     }
 
 
+    // ─── Tilt Cards ────────────────────────────────────────────
+    function initTiltCards() {
+        const tiltCards = document.querySelectorAll('.tilt-card');
+        
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Tilt intensity modifier
+                const rotateX = ((y - centerY) / centerY) * -10; 
+                const rotateY = ((x - centerX) / centerX) * 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                card.style.transition = 'none';
+                card.style.zIndex = '10'; // Bring to front while hovering
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                card.style.transition = 'transform 0.5s ease-out';
+                card.style.zIndex = '1';
+            });
+        });
+    }
+
+    // ─── Newsletter Form ───────────────────────────────────────
+    function initNewsletterForm() {
+        const form = document.getElementById('newsletter-form');
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const email = formData.get('newsletterEmail');
+            
+            const message = `Hi, I want to join the Stargazer's Club newsletter! My email is ${email}`;
+            const waUrl = `https://wa.me/+917307556533?text=${encodeURIComponent(message)}`;
+            
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Subscribing...';
+            btn.style.background = '#25d366';
+            
+            setTimeout(() => {
+                window.open(waUrl, '_blank');
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                form.reset();
+            }, 600);
+        });
+    }
+
     // ─── Initialize Everything ─────────────────────────────────
     function init() {
         initPreloader();
@@ -553,6 +637,8 @@
         initMagneticButtons();
         initReviewsVideo();
         initFAQ();
+        initTiltCards();
+        initNewsletterForm();
 
         // Trigger reveal for elements already in viewport
         setTimeout(() => {
