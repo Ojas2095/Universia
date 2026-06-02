@@ -1535,6 +1535,205 @@ h1, h2, h3, h4 {
     border-radius: var(--radius-md);
 }
 
+/* ─── Global Scrollbar ─── */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-accent);
+    border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dim);
+}
+
+/* ─── Preloader ─── */
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-deep);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+.preloader-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.preloader-orbit {
+    width: 80px;
+    height: 80px;
+    animation: pulse 2s infinite ease-in-out;
+}
+.orbit-spin {
+    transform-origin: center;
+    animation: spin 1.5s linear infinite;
+}
+.orbit-planet {
+    transform-origin: center;
+    animation: spin 3s linear infinite reverse;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+    0%, 100% { filter: drop-shadow(0 0 8px var(--accent-glow)); }
+    50% { filter: drop-shadow(0 0 20px var(--accent-glow-strong)); }
+}
+.preloader-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    animation: twinkle 1.5s infinite;
+}
+
+/* ─── Team Hover Details ─── */
+.team-photo {
+    position: relative;
+}
+.team-hover-detail {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 14, 26, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-medium);
+    padding: 20px;
+    text-align: center;
+}
+.team-card:hover .team-hover-detail {
+    opacity: 1;
+    transform: translateY(0);
+}
+.team-hover-detail .detail-label {
+    font-size: var(--fs-tag);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+.team-hover-detail .detail-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--accent-light);
+    font-weight: 700;
+}
+
+/* ─── Review Custom Video Player ─── */
+.review-video-card {
+    position: relative;
+    cursor: pointer;
+}
+.review-play-btn {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+.review-video-card:hover .review-play-btn {
+    background: rgba(0, 0, 0, 0.2);
+}
+.review-video-card.is-playing .review-play-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+.review-play-btn .play-icon {
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    transition: transform var(--transition-fast);
+}
+.review-video-card:hover .play-icon {
+    transform: scale(1.1);
+    color: var(--accent-light);
+}
+
+/* ─── FAQ Section ─── */
+.faq-section {
+    padding: var(--section-pad) 0;
+    background: var(--bg-deep);
+}
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.faq-item {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+}
+.faq-item:hover {
+    border-color: var(--border-medium);
+}
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--accent);
+    transition: transform var(--transition-medium);
+}
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-answer {
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-medium), padding var(--transition-medium);
+}
+.faq-item.active .faq-answer {
+    padding: 0 24px 24px;
+    max-height: 500px;
+}
+.faq-answer p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* Mobile landscape / small tablet */
 @media (max-width: 860px) {
     .mobile-toggle {

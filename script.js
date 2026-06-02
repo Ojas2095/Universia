@@ -423,8 +423,125 @@
     }
 
 
+    // ─── Preloader ─────────────────────────────────────────────
+    function initPreloader() {
+        const preloader = document.getElementById('preloader');
+        if (!preloader) return;
+        
+        const hidePreloader = () => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 800);
+        };
+        
+        window.addEventListener('load', hidePreloader);
+        // Fallback max 3 seconds
+        setTimeout(hidePreloader, 3000);
+    }
+
+    // ─── Magnetic Buttons ──────────────────────────────────────
+    function initMagneticButtons() {
+        const btns = document.querySelectorAll('.btn');
+        
+        btns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Calculate pull (-10px to +10px)
+                const pullX = ((x / rect.width) - 0.5) * 20;
+                const pullY = ((y / rect.height) - 0.5) * 20;
+                
+                btn.style.transform = `translate(${pullX}px, ${pullY}px)`;
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px)';
+                btn.style.transition = 'transform 0.3s ease-out';
+            });
+            
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transition = 'none'; // Snap instantly to cursor, then follow
+            });
+        });
+    }
+
+    // ─── Custom Review Video Player (Lazy & Controls) ──────────
+    function initReviewsVideo() {
+        const reviewCards = document.querySelectorAll('.review-video-card');
+        if (!reviewCards.length) return;
+
+        // Lazy load logic
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const video = card.querySelector('video');
+                    if (video && video.dataset.src) {
+                        video.src = video.dataset.src;
+                        video.removeAttribute('data-src');
+                    }
+                    obs.unobserve(card);
+                }
+            });
+        }, { rootMargin: '200px' });
+
+        reviewCards.forEach(card => {
+            observer.observe(card);
+            
+            const video = card.querySelector('video');
+            if (!video) return;
+            
+            card.addEventListener('click', () => {
+                if (video.paused) {
+                    // Pause all other videos
+                    document.querySelectorAll('.review-video-card video').forEach(v => {
+                        if (v !== video) {
+                            v.pause();
+                            v.closest('.review-video-card').classList.remove('is-playing');
+                        }
+                    });
+                    
+                    video.play();
+                    card.classList.add('is-playing');
+                } else {
+                    video.pause();
+                    card.classList.remove('is-playing');
+                }
+            });
+
+            video.addEventListener('ended', () => {
+                card.classList.remove('is-playing');
+            });
+        });
+    }
+
+    // ─── FAQ Toggle ────────────────────────────────────────────
+    function initFAQ() {
+        const questions = document.querySelectorAll('.faq-question');
+        
+        questions.forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.faq-item');
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Toggle clicked item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    }
+
+
     // ─── Initialize Everything ─────────────────────────────────
     function init() {
+        initPreloader();
         initStarCanvas();
         initScrollReveal();
         initNav();
@@ -433,6 +550,9 @@
         initContactForm();
         initSmoothScroll();
         initParallax();
+        initMagneticButtons();
+        initReviewsVideo();
+        initFAQ();
 
         // Trigger reveal for elements already in viewport
         setTimeout(() => {

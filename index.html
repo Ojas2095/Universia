@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Universia — India's community of space enthusiasts. Premium telescopes, stargazing sessions in the Himalayas, and astronomical workshops. Bringing the universe closer to you.">
     <meta name="keywords" content="telescopes, astronomy, stargazing, India, Dehradun, astrophotography, Universia, FNOS">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.universia.in/">
+    <meta property="og:title" content="Universia — Revolutionizing Astronomy in India">
+    <meta property="og:description" content="A community of stargazers, dreamers, and explorers. We build telescopes, host night-sky sessions in the Himalayas, and make astronomy accessible to everyone.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Ojas2095/Universia/master/images/hero-earth.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
     <title>Universia — Revolutionizing Astronomy in India</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +24,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PRELOADER                                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <svg class="preloader-orbit" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(212, 168, 83, 0.15)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#d4a853" stroke-width="2" stroke-dasharray="70 210" stroke-linecap="round" class="orbit-spin"/>
+                <circle cx="50" cy="5" r="4" fill="#d4a853" class="orbit-planet"/>
+            </svg>
+            <div class="preloader-text">Igniting the stars...</div>
+        </div>
+    </div>
 
     <!-- ═══════════════════════════════════════════ -->
     <!-- NAVIGATION                                  -->
@@ -162,6 +187,10 @@
                 <div class="team-card reveal-up" id="team-satyansh">
                     <div class="team-photo">
                         <img src="images/team/satyansh.jpg" alt="Satyansh Srivastava - Founder & CEO" loading="lazy">
+                        <div class="team-hover-detail">
+                            <span class="detail-label">Favorite Constellation:</span>
+                            <span class="detail-value">Orion</span>
+                        </div>
                     </div>
                     <div class="team-info">
                         <h3 class="team-name">Satyansh Srivastava</h3>
@@ -177,6 +206,10 @@
                 <div class="team-card reveal-up" id="team-pranjal" style="--delay: 0.15s">
                     <div class="team-photo">
                         <img src="images/team/pranjal.jpg" alt="Pranjal Goyal - Product Designer" loading="lazy">
+                        <div class="team-hover-detail">
+                            <span class="detail-label">Favorite Telescope:</span>
+                            <span class="detail-value">FNOS 127mm</span>
+                        </div>
                     </div>
                     <div class="team-info">
                         <h3 class="team-name">Pranjal Goyal</h3>
@@ -192,6 +225,10 @@
                 <div class="team-card reveal-up" id="team-raghvendra" style="--delay: 0.3s">
                     <div class="team-photo">
                         <img src="images/team/raghvendra.jpg" alt="Raghvendra Goyal - Product Engineer" loading="lazy">
+                        <div class="team-hover-detail">
+                            <span class="detail-label">Favorite Target:</span>
+                            <span class="detail-value">Saturn's Rings</span>
+                        </div>
                     </div>
                     <div class="team-info">
                         <h3 class="team-name">Raghvendra Goyal</h3>
@@ -478,37 +515,48 @@
             </div>
             <div class="reviews-grid reveal-up">
                 <div class="review-video-card" id="review-1">
-                    <video src="videos/reviews/1.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/1.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-2">
-                    <video src="videos/reviews/2.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/2.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-3">
-                    <video src="videos/reviews/3.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/3.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-4">
-                    <video src="videos/reviews/4.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/4.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-5">
-                    <video src="videos/reviews/5.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/5.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-6">
-                    <video src="videos/reviews/6.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/6.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-7">
-                    <video src="videos/reviews/7.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/7.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-8">
-                    <video src="videos/reviews/8.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/8.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-9">
-                    <video src="videos/reviews/9.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/9.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-10">
-                    <video src="videos/reviews/10.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/10.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
                 <div class="review-video-card" id="review-11">
-                    <video src="videos/reviews/11.mp4" preload="metadata" controls></video>
+                    <video data-src="videos/reviews/11.mp4" preload="none" loop playsinline></video>
+                    <div class="review-play-btn"><span class="play-icon">▶</span></div>
                 </div>
             </div>
         </div>
@@ -599,6 +647,39 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FAQ SECTION                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="faq" class="faq-section">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag reveal-up">Got Questions?</span>
+                <h2 class="section-heading reveal-up">
+                    Frequently Asked<br>
+                    <em>Questions</em>
+                </h2>
+            </div>
+            <div class="faq-list reveal-up">
+                <div class="faq-item">
+                    <button class="faq-question">Do I need prior experience to buy a telescope? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Not at all! Our FNOS 60mm and 75mm telescopes are perfect for beginners. They come with an easy setup guide, and our community is always here to help you navigate the night sky.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What happens if it's cloudy during a stargazing trip? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Weather is part of the adventure! If the sky is overcast, we focus on astronomical workshops, astrophotography editing sessions, and campfire discussions. We always keep backup plans ready.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is there a warranty on the FNOS series? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Yes! Every Universia FNOS telescope comes with a 1-year warranty covering optical alignment and manufacturing defects.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I take photos through these telescopes? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Absolutely. You can attach a smartphone adapter (sold separately) to capture stunning images of the Moon, Jupiter, and Saturn directly through the eyepiece.</p></div>
                 </div>
             </div>
         </div>
