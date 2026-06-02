@@ -19,8 +19,7 @@
     <header id="site-header" class="site-header">
         <div class="header-inner">
             <a href="#hero" class="logo" id="logo">
-                <span class="logo-mark">✦</span>
-                <span class="logo-text">UNIVERSIA</span>
+                <img src="images/logo.png" alt="Universia Logo" class="logo-img">
             </a>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-links">
@@ -29,6 +28,7 @@
                     <li><a href="#products" class="nav-link" data-section="products">Telescopes</a></li>
                     <li><a href="#experiences" class="nav-link" data-section="experiences">Experiences</a></li>
                     <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                    <li><a href="#reviews" class="nav-link" data-section="reviews">Reviews</a></li>
                     <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
                 </ul>
             </nav>
@@ -45,14 +45,14 @@
     <!-- ═══════════════════════════════════════════ -->
     <section id="hero" class="hero-section">
         <canvas id="star-canvas" class="star-canvas"></canvas>
-        <div class="hero-bg-image"></div>
+        <div class="hero-bg-image" style="background-image: url('images/hero-earth.jpg')"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <p class="hero-eyebrow reveal-up">Est. Dehradun, Uttarakhand</p>
             <h1 class="hero-title">
-                <span class="hero-line reveal-up" style="--delay: 0.1s">Bring the</span>
-                <span class="hero-line hero-line-accent reveal-up" style="--delay: 0.25s">Universe</span>
-                <span class="hero-line reveal-up" style="--delay: 0.4s">Closer</span>
+                <span class="hero-line reveal-up" style="--delay: 0.1s">Revolutionizing</span>
+                <span class="hero-line hero-line-accent reveal-up" style="--delay: 0.25s">Astronomy</span>
+                <span class="hero-line reveal-up" style="--delay: 0.4s">in India</span>
             </h1>
             <p class="hero-subtitle reveal-up" style="--delay: 0.55s">
                 A community of stargazers, dreamers, and explorers. We build telescopes, 
@@ -82,14 +82,19 @@
                         <em>for the night sky</em>
                     </h2>
                     <p class="about-description reveal-up">
-                        Universia started as a small group of amateur astronomers in Dehradun who couldn't stop 
-                        looking up. What began as late-night rooftop sessions with borrowed binoculars has grown 
-                        into India's most passionate astronomy community.
+                        Welcome to Universia, a thriving community of space enthusiasts united by a shared 
+                        passion for the cosmos. At Universia, we aim to inspire curiosity and promote the 
+                        wonders of astronomy across the nation.
                     </p>
                     <p class="about-description reveal-up">
-                        Today, we design our own telescopes, organize stargazing expeditions across the 
-                        Himalayan foothills, and run workshops that turn curious beginners into confident 
-                        sky-watchers. We believe everyone deserves to see Saturn's rings with their own eyes.
+                        We specialize in bringing the universe closer to you through high-quality telescopes 
+                        designed for all levels of stargazers, stargazing sessions under breathtaking night skies, 
+                        and astronomical workshops to explore the science and beauty of the cosmos.
+                    </p>
+                    <p class="about-description reveal-up">
+                        Whether you're a seasoned astronomer or just starting your journey, Universia offers 
+                        a gateway to the stars, creating unforgettable experiences that spark a lifelong love 
+                        for space exploration. Join us, and let's discover the universe together!
                     </p>
                     <div class="about-stats reveal-up">
                         <div class="stat">
@@ -109,10 +114,10 @@
                 <div class="about-visual reveal-up">
                     <div class="about-image-stack">
                         <div class="about-img about-img-main">
-                            <img src="images/stargazing-event.png" alt="Universia community members stargazing in the Himalayas" loading="lazy">
+                            <img src="images/about/photo1.jpg" alt="Universia community stargazing" loading="lazy">
                         </div>
                         <div class="about-img about-img-accent">
-                            <img src="images/moon-closeup.png" alt="Moon photographed through a Universia telescope" loading="lazy">
+                            <img src="images/about/7.jpg" alt="Moon photographed through a Universia telescope" loading="lazy">
                         </div>
                         <div class="about-decoration">
                             <svg viewBox="0 0 200 200" class="orbit-ring">
@@ -120,6 +125,83 @@
                                 <circle cx="100" cy="10" r="4" fill="currentColor" class="orbit-dot"/>
                             </svg>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Photo Strip -->
+            <div class="about-photos reveal-up">
+                <div class="about-photos-scroll">
+                    <div class="about-photo-item"><img src="images/about/photo1.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo21.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo3.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo4.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo5.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/6.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/8.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/9.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/10.jpg" alt="Universia moment" loading="lazy"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- TEAM SECTION                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="team" class="team-section">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag reveal-up">The People Behind the Stars</span>
+                <h2 class="section-heading reveal-up">
+                    Our<br><em>Team</em>
+                </h2>
+                <p class="section-subtext reveal-up">The amateur astronomers behind Universia</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal-up" id="team-satyansh">
+                    <div class="team-photo">
+                        <img src="images/team/satyansh.jpg" alt="Satyansh Srivastava - Founder & CEO" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Satyansh Srivastava</h3>
+                        <span class="team-role">Founder & CEO</span>
+                        <p class="team-bio">
+                            Satyansh is the visionary Founder and CEO of Universia. With over half a decade of 
+                            experience as an astrophotographer and independent astronomer, he combines his passion 
+                            for exploring the cosmos with his entrepreneurial spirit. Under his leadership, 
+                            Universia has become a thriving community for space enthusiasts.
+                        </p>
+                    </div>
+                </div>
+                <div class="team-card reveal-up" id="team-pranjal" style="--delay: 0.15s">
+                    <div class="team-photo">
+                        <img src="images/team/pranjal.jpg" alt="Pranjal Goyal - Product Designer" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Pranjal Goyal</h3>
+                        <span class="team-role">Product Designer</span>
+                        <p class="team-bio">
+                            Pranjal brings creativity and precision to Universia as Product Designer. With a 
+                            passion for blending aesthetics and functionality, Pranjal plays a pivotal role in 
+                            designing cutting-edge products that enhance the stargazing experience, ensuring that 
+                            every telescope reflects Universia's commitment to quality.
+                        </p>
+                    </div>
+                </div>
+                <div class="team-card reveal-up" id="team-raghvendra" style="--delay: 0.3s">
+                    <div class="team-photo">
+                        <img src="images/team/raghvendra.jpg" alt="Raghvendra Goyal - Product Engineer" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Raghvendra Goyal</h3>
+                        <span class="team-role">Product Engineer</span>
+                        <p class="team-bio">
+                            Raghvendra is a visionary Product Engineer at Universia, dedicated to the development 
+                            of advanced telescopes. With a deep understanding of engineering principles and a 
+                            passion for innovation, Raghvendra designs and refines cutting-edge optical technologies 
+                            for unparalleled telescope performance.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -143,11 +225,11 @@
                 </p>
             </div>
             <div class="products-grid">
-                <!-- Product 1 -->
+                <!-- Product 1 — 60mm -->
                 <div class="product-card reveal-up" id="product-60mm">
                     <div class="product-badge">Beginner</div>
                     <div class="product-image">
-                        <img src="images/telescope-60mm.png" alt="UNIVERSIA FNOS Series 60mm Refractor Telescope" loading="lazy">
+                        <img src="images/products/fnos-60mm.jpg" alt="UNIVERSIA FNOS Series 60mm Refractor Telescope" loading="lazy">
                         <div class="product-glow"></div>
                     </div>
                     <div class="product-info">
@@ -161,16 +243,16 @@
                         </ul>
                         <div class="product-footer">
                             <span class="product-price">₹7,000</span>
-                            <button class="btn btn-small" id="buy-60mm">Get Started</button>
+                            <a href="https://wa.me/+917307556533?text=Hi%20I'm%20interested%20in%20the%20FNOS%2060mm%20telescope" class="btn btn-small" id="buy-60mm" target="_blank" rel="noopener">Get Started</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product 2 — Featured -->
+                <!-- Product 2 — 75mm Featured -->
                 <div class="product-card product-card-featured reveal-up" id="product-75mm" style="--delay: 0.15s">
                     <div class="product-badge product-badge-gold">Popular</div>
                     <div class="product-image">
-                        <img src="images/telescope-75mm.png" alt="UNIVERSIA FNOS Series 75mm Refractor Telescope" loading="lazy">
+                        <img src="images/products/fnos-75mm.jpg" alt="UNIVERSIA FNOS Series 75mm Refractor Telescope" loading="lazy">
                         <div class="product-glow"></div>
                     </div>
                     <div class="product-info">
@@ -184,16 +266,16 @@
                         </ul>
                         <div class="product-footer">
                             <span class="product-price">₹9,000</span>
-                            <button class="btn btn-primary btn-small" id="buy-75mm">Get This</button>
+                            <a href="https://wa.me/+917307556533?text=Hi%20I'm%20interested%20in%20the%20FNOS%2075mm%20telescope" class="btn btn-primary btn-small" id="buy-75mm" target="_blank" rel="noopener">Get This</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product 3 -->
+                <!-- Product 3 — 127mm -->
                 <div class="product-card reveal-up" id="product-127mm" style="--delay: 0.3s">
                     <div class="product-badge">Advanced</div>
                     <div class="product-image">
-                        <img src="images/telescope-127mm.png" alt="UNIVERSIA FNOS Series 127mm Reflector Telescope" loading="lazy">
+                        <img src="images/products/fnos-127mm.jpg" alt="UNIVERSIA FNOS Series 127mm Reflector Telescope" loading="lazy">
                         <div class="product-glow"></div>
                     </div>
                     <div class="product-info">
@@ -207,7 +289,7 @@
                         </ul>
                         <div class="product-footer">
                             <span class="product-price">₹17,000</span>
-                            <button class="btn btn-small" id="buy-127mm">Level Up</button>
+                            <a href="https://wa.me/+917307556533?text=Hi%20I'm%20interested%20in%20the%20FNOS%20127mm%20telescope" class="btn btn-small" id="buy-127mm" target="_blank" rel="noopener">Level Up</a>
                         </div>
                     </div>
                 </div>
@@ -228,10 +310,10 @@
                 </h2>
             </div>
             <div class="experiences-grid">
-                <!-- Experience 1 -->
+                <!-- Experience 1 — Nagtibba -->
                 <div class="experience-card reveal-up" id="exp-nagtibba">
                     <div class="experience-image">
-                        <img src="images/stargazing-event.png" alt="Star gazing at Nagtibba with Universia" loading="lazy">
+                        <img src="images/events/1.jpg" alt="Star gazing at Nagtibba with Universia" loading="lazy">
                         <div class="experience-date">
                             <span class="date-label">Coming Soon</span>
                         </div>
@@ -248,10 +330,10 @@
                     </div>
                 </div>
 
-                <!-- Experience 2 -->
+                <!-- Experience 2 — Birthday -->
                 <div class="experience-card experience-card-wide reveal-up" id="exp-birthday" style="--delay: 0.15s">
                     <div class="experience-image">
-                        <img src="images/birthday-stars.png" alt="Birthday celebration under the stars with Universia" loading="lazy">
+                        <img src="images/events/3.jpg" alt="Birthday celebration under the stars with Universia" loading="lazy">
                         <div class="experience-date">
                             <span class="date-label">On Demand</span>
                         </div>
@@ -260,18 +342,18 @@
                         <span class="experience-category">Special Event</span>
                         <h3 class="experience-title">Birthday Under the Stars</h3>
                         <p class="experience-desc">
-                            Forget the usual party venues. Celebrate your birthday at Nagtibba 
-                            with telescopes, the Milky Way as your ceiling, and the Himalayas 
-                            as your backdrop. Cake tastes better at 9,000 feet.
+                            Escape the city lights and create unforgettable memories with a magical stargazing 
+                            experience in the serene Himalayan beauty. Celebrate your birthday at Nagtibba 
+                            with telescopes, the Milky Way as your ceiling, and the Himalayas as your backdrop.
                         </p>
                         <a href="https://wa.me/+917307556533?text=Hi%20I'd%20like%20to%20book%20a%20birthday%20under%20the%20stars" class="btn btn-outline btn-small" id="book-birthday" target="_blank" rel="noopener">Plan Your Night</a>
                     </div>
                 </div>
 
-                <!-- Experience 3 -->
+                <!-- Experience 3 — Moon Gazing -->
                 <div class="experience-card reveal-up" id="exp-moon" style="--delay: 0.3s">
                     <div class="experience-image">
-                        <img src="images/moon-closeup.png" alt="Moon gazing session with Universia in Bidholi" loading="lazy">
+                        <img src="images/events/2.jpg" alt="Moon gazing session with Universia in Bidholi" loading="lazy">
                         <div class="experience-date">
                             <span class="date-label">Coming Soon</span>
                         </div>
@@ -299,129 +381,134 @@
             <div class="section-header centered">
                 <span class="section-tag reveal-up">Through Our Lenses</span>
                 <h2 class="section-heading reveal-up">
-                    What you'll see<br>
-                    <em>up there</em>
+                    Explore the<br>
+                    <em>Universe</em>
                 </h2>
             </div>
-            <div class="gallery-grid reveal-up">
-                <div class="gallery-item gallery-item-tall" id="gallery-1">
-                    <img src="images/moon-closeup.png" alt="Detailed lunar surface through telescope" loading="lazy">
-                    <div class="gallery-caption">
-                        <span>The Moon</span>
-                        <small>FNOS 127mm · Dehradun</small>
-                    </div>
+
+            <!-- Gallery Filter Tabs -->
+            <div class="gallery-filters reveal-up">
+                <button class="gallery-filter active" data-filter="all">All</button>
+                <button class="gallery-filter" data-filter="photo">Photos</button>
+                <button class="gallery-filter" data-filter="video">Videos</button>
+            </div>
+
+            <div class="gallery-masonry reveal-up" id="gallery-grid">
+                <!-- Row 1 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/1.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/2.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/3.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/4.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 2 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/5.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/7.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/8.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/9.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 3 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/11.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/12.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/13.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/14.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 4 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/15.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/16.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/17.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/18.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 5 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/19.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/20.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/21.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/22.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 6 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/23.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/24.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/25.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/26.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 7 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/27.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/28.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/29.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/30.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 8 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/31.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/32.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/33.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/34.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 9 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/35.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/36.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/37.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/38.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Row 10 -->
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/39.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/40.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/41.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <!-- Videos -->
+                <div class="gallery-item gallery-video-item" data-type="video">
+                    <video src="videos/gallery/1.mp4" preload="metadata" muted></video>
+                    <div class="video-play-overlay"><span class="play-icon">▶</span></div>
                 </div>
-                <div class="gallery-item" id="gallery-2">
-                    <img src="images/saturn.png" alt="Saturn and its rings through telescope" loading="lazy">
-                    <div class="gallery-caption">
-                        <span>Saturn</span>
-                        <small>FNOS 127mm · Nagtibba</small>
-                    </div>
+                <div class="gallery-item gallery-video-item" data-type="video">
+                    <video src="videos/gallery/2.mp4" preload="metadata" muted></video>
+                    <div class="video-play-overlay"><span class="play-icon">▶</span></div>
                 </div>
-                <div class="gallery-item" id="gallery-3">
-                    <img src="images/jupiter.png" alt="Jupiter and its cloud bands through telescope" loading="lazy">
-                    <div class="gallery-caption">
-                        <span>Jupiter</span>
-                        <small>FNOS 75mm · Bidholi</small>
-                    </div>
-                </div>
-                <div class="gallery-item gallery-item-wide" id="gallery-4">
-                    <img src="images/nebula.png" alt="Orion Nebula deep sky photography" loading="lazy">
-                    <div class="gallery-caption">
-                        <span>Orion Nebula</span>
-                        <small>Deep Sky · Long Exposure</small>
-                    </div>
-                </div>
-                <div class="gallery-item" id="gallery-5">
-                    <img src="images/stargazing-event.png" alt="Universia community stargazing event" loading="lazy">
-                    <div class="gallery-caption">
-                        <span>Community Night</span>
-                        <small>Nagtibba Camp · 2024</small>
-                    </div>
-                </div>
-                <div class="gallery-item gallery-item-tall" id="gallery-6">
-                    <img src="images/hero-bg.png" alt="Milky Way over Himalayan mountains" loading="lazy">
-                    <div class="gallery-caption">
-                        <span>Milky Way</span>
-                        <small>Uttarakhand · 14mm f/2.8</small>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="gallery-load-more reveal-up">
+                <button class="btn btn-outline" id="gallery-load-more">Show More</button>
             </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- TESTIMONIALS SECTION                        -->
+    <!-- VIDEO REVIEWS SECTION                       -->
     <!-- ═══════════════════════════════════════════ -->
-    <section id="testimonials" class="testimonials-section">
+    <section id="reviews" class="reviews-section">
         <div class="section-container">
             <div class="section-header centered">
-                <span class="section-tag reveal-up">Reviews</span>
+                <span class="section-tag reveal-up">Real Experiences</span>
                 <h2 class="section-heading reveal-up">
                     What fellow stargazers<br>
                     <em>are saying</em>
                 </h2>
+                <p class="section-subtext reveal-up">
+                    Hear from our community — real stories from real stargazers.
+                </p>
             </div>
-            <div class="testimonials-track reveal-up">
-                <div class="testimonial-card" id="testimonial-1">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "The Nagtibba trip was life-changing. I saw the Milky Way with my naked eyes for 
-                        the first time. Satyansh and the team made everything so comfortable and educational. 
-                        Can't wait for the next one!"
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <span class="author-name">Aarav Sharma</span>
-                            <span class="author-detail">Nagtibba Trip · Nov 2024</span>
-                        </div>
-                    </div>
+            <div class="reviews-grid reveal-up">
+                <div class="review-video-card" id="review-1">
+                    <video src="videos/reviews/1.mp4" preload="metadata" controls></video>
                 </div>
-                <div class="testimonial-card" id="testimonial-2">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Bought the FNOS 75mm as my first telescope. The quality at this price is 
-                        incredible — I've already spotted Jupiter's moons and Saturn's rings from 
-                        my terrace in Delhi. The team helped me set it up over a video call!"
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">P</div>
-                        <div class="author-info">
-                            <span class="author-name">Priya Mehta</span>
-                            <span class="author-detail">FNOS 75mm Owner</span>
-                        </div>
-                    </div>
+                <div class="review-video-card" id="review-2">
+                    <video src="videos/reviews/2.mp4" preload="metadata" controls></video>
                 </div>
-                <div class="testimonial-card" id="testimonial-3">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "We booked the birthday-under-the-stars package for my son's 12th birthday. 
-                        He's been obsessed with space ever since. The craters on the Moon through the 
-                        127mm scope were jaw-dropping. Worth every rupee."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">R</div>
-                        <div class="author-info">
-                            <span class="author-name">Rahul Kapoor</span>
-                            <span class="author-detail">Birthday Event · Jan 2025</span>
-                        </div>
-                    </div>
+                <div class="review-video-card" id="review-3">
+                    <video src="videos/reviews/3.mp4" preload="metadata" controls></video>
                 </div>
-                <div class="testimonial-card" id="testimonial-4">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "As a UPES student, having Universia right here in Dehradun is a blessing. 
-                        Their workshops taught me astrophotography basics and now I shoot the Moon 
-                        through my phone adapter. Incredible community."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">N</div>
-                        <div class="author-info">
-                            <span class="author-name">Neha Joshi</span>
-                            <span class="author-detail">Workshop Attendee · UPES</span>
-                        </div>
-                    </div>
+                <div class="review-video-card" id="review-4">
+                    <video src="videos/reviews/4.mp4" preload="metadata" controls></video>
+                </div>
+                <div class="review-video-card" id="review-5">
+                    <video src="videos/reviews/5.mp4" preload="metadata" controls></video>
+                </div>
+                <div class="review-video-card" id="review-6">
+                    <video src="videos/reviews/6.mp4" preload="metadata" controls></video>
+                </div>
+                <div class="review-video-card" id="review-7">
+                    <video src="videos/reviews/7.mp4" preload="metadata" controls></video>
+                </div>
+                <div class="review-video-card" id="review-8">
+                    <video src="videos/reviews/8.mp4" preload="metadata" controls></video>
+                </div>
+                <div class="review-video-card" id="review-9">
+                    <video src="videos/reviews/9.mp4" preload="metadata" controls></video>
+                </div>
+                <div class="review-video-card" id="review-10">
+                    <video src="videos/reviews/10.mp4" preload="metadata" controls></video>
+                </div>
+                <div class="review-video-card" id="review-11">
+                    <video src="videos/reviews/11.mp4" preload="metadata" controls></video>
                 </div>
             </div>
         </div>
@@ -525,8 +612,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="#hero" class="logo">
-                        <span class="logo-mark">✦</span>
-                        <span class="logo-text">UNIVERSIA</span>
+                        <img src="images/logo.png" alt="Universia Logo" class="logo-img">
                     </a>
                     <p class="footer-tagline">Revolutionizing astronomy in India, one telescope at a time.</p>
                 </div>
@@ -538,6 +624,7 @@
                             <li><a href="#products">Telescopes</a></li>
                             <li><a href="#experiences">Experiences</a></li>
                             <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#reviews">Reviews</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -577,6 +664,7 @@
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
         <img src="" alt="" id="lightbox-img" class="lightbox-img">
+        <video src="" id="lightbox-video" class="lightbox-video" controls style="display:none"></video>
     </div>
 
     <script src="script.js"></script>
