@@ -566,11 +566,16 @@
     }
 
 
-    // ─── Tilt Cards ────────────────────────────────────────────
+    // ─── Tilt Cards & Glare ────────────────────────────────────
     function initTiltCards() {
         const tiltCards = document.querySelectorAll('.tilt-card');
         
         tiltCards.forEach(card => {
+            // Create and append glare element
+            const glare = document.createElement('div');
+            glare.classList.add('card-glare');
+            card.appendChild(glare);
+
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -585,13 +590,23 @@
                 
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
                 card.style.transition = 'none';
-                card.style.zIndex = '10'; // Bring to front while hovering
+                card.style.zIndex = '10';
+                
+                // Glare effect
+                const glareX = (x / rect.width) * 100;
+                const glareY = (y / rect.height) * 100;
+                glare.style.transform = `translate(${50 - glareX}%, ${50 - glareY}%)`;
+                glare.style.opacity = '1';
+                glare.style.transition = 'none';
             });
             
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
                 card.style.transition = 'transform 0.5s ease-out';
                 card.style.zIndex = '1';
+                
+                glare.style.opacity = '0';
+                glare.style.transition = 'opacity 0.5s ease-out';
             });
         });
     }
@@ -623,8 +638,50 @@
         });
     }
 
+    // ─── Custom Cursor ─────────────────────────────────────────
+    function initCustomCursor() {
+        const dot = document.getElementById('cursor-dot');
+        const follower = document.getElementById('cursor-follower');
+        if (!dot || !follower) return;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            dot.style.left = `${mouseX}px`;
+            dot.style.top = `${mouseY}px`;
+        });
+
+        function animateFollower() {
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+            follower.style.left = `${followerX}px`;
+            follower.style.top = `${followerY}px`;
+            requestAnimationFrame(animateFollower);
+        }
+        animateFollower();
+
+        const hoverElements = document.querySelectorAll('a, button, input, textarea, .review-video-card, .faq-question, .product-card, .team-card, .experience-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                follower.classList.add('hover-active');
+                dot.style.opacity = '0';
+            });
+            el.addEventListener('mouseleave', () => {
+                follower.classList.remove('hover-active');
+                dot.style.opacity = '1';
+            });
+        });
+    }
+
     // ─── Initialize Everything ─────────────────────────────────
     function init() {
+        initCustomCursor();
         initPreloader();
         initStarCanvas();
         initScrollReveal();
