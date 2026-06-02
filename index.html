@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Universia — India's community of space enthusiasts. Premium telescopes, stargazing sessions in the Himalayas, and astronomical workshops. Bringing the universe closer to you.">
+    <meta name="keywords" content="telescopes, astronomy, stargazing, India, Dehradun, astrophotography, Universia, FNOS">
+    <title>Universia — Revolutionizing Astronomy in India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NAVIGATION                                  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <header id="site-header" class="site-header">
+        <div class="header-inner">
+            <a href="#hero" class="logo" id="logo">
+                <span class="logo-mark">✦</span>
+                <span class="logo-text">UNIVERSIA</span>
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#products" class="nav-link" data-section="products">Telescopes</a></li>
+                    <li><a href="#experiences" class="nav-link" data-section="experiences">Experiences</a></li>
+                    <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO SECTION                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero-section">
+        <canvas id="star-canvas" class="star-canvas"></canvas>
+        <div class="hero-bg-image"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow reveal-up">Est. Dehradun, Uttarakhand</p>
+            <h1 class="hero-title">
+                <span class="hero-line reveal-up" style="--delay: 0.1s">Bring the</span>
+                <span class="hero-line hero-line-accent reveal-up" style="--delay: 0.25s">Universe</span>
+                <span class="hero-line reveal-up" style="--delay: 0.4s">Closer</span>
+            </h1>
+            <p class="hero-subtitle reveal-up" style="--delay: 0.55s">
+                A community of stargazers, dreamers, and explorers. We build telescopes, 
+                host night-sky sessions in the Himalayas, and make astronomy accessible to everyone.
+            </p>
+            <div class="hero-cta reveal-up" style="--delay: 0.7s">
+                <a href="#products" class="btn btn-primary" id="cta-telescopes">Explore Telescopes</a>
+                <a href="#experiences" class="btn btn-outline" id="cta-stargazing">Book a Stargazing Night</a>
+            </div>
+            <div class="hero-scroll-hint reveal-up" style="--delay: 1s">
+                <div class="scroll-line"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ABOUT SECTION                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-tag reveal-up">Our Story</span>
+                    <h2 class="section-heading reveal-up">
+                        Born from a love<br>
+                        <em>for the night sky</em>
+                    </h2>
+                    <p class="about-description reveal-up">
+                        Universia started as a small group of amateur astronomers in Dehradun who couldn't stop 
+                        looking up. What began as late-night rooftop sessions with borrowed binoculars has grown 
+                        into India's most passionate astronomy community.
+                    </p>
+                    <p class="about-description reveal-up">
+                        Today, we design our own telescopes, organize stargazing expeditions across the 
+                        Himalayan foothills, and run workshops that turn curious beginners into confident 
+                        sky-watchers. We believe everyone deserves to see Saturn's rings with their own eyes.
+                    </p>
+                    <div class="about-stats reveal-up">
+                        <div class="stat">
+                            <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Community Members</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Stargazing Events</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="200">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Telescopes Sold</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual reveal-up">
+                    <div class="about-image-stack">
+                        <div class="about-img about-img-main">
+                            <img src="images/stargazing-event.png" alt="Universia community members stargazing in the Himalayas" loading="lazy">
+                        </div>
+                        <div class="about-img about-img-accent">
+                            <img src="images/moon-closeup.png" alt="Moon photographed through a Universia telescope" loading="lazy">
+                        </div>
+                        <div class="about-decoration">
+                            <svg viewBox="0 0 200 200" class="orbit-ring">
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 6"/>
+                                <circle cx="100" cy="10" r="4" fill="currentColor" class="orbit-dot"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PRODUCTS / TELESCOPES SECTION               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="products" class="products-section">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag reveal-up">FNOS Series</span>
+                <h2 class="section-heading reveal-up">
+                    Telescopes built for<br>
+                    <em>Indian skies</em>
+                </h2>
+                <p class="section-subtext reveal-up">
+                    Designed in Dehradun, tested under Himalayan stars. Each FNOS telescope is 
+                    crafted for clarity, durability, and the unique conditions of the Indian subcontinent.
+                </p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card reveal-up" id="product-60mm">
+                    <div class="product-badge">Beginner</div>
+                    <div class="product-image">
+                        <img src="images/telescope-60mm.png" alt="UNIVERSIA FNOS Series 60mm Refractor Telescope" loading="lazy">
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">FNOS 60mm</h3>
+                        <p class="product-type">Achromatic Refractor</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Focal Length</span><span class="spec-value">700mm</span></li>
+                            <li><span class="spec-label">Aperture</span><span class="spec-value">60mm</span></li>
+                            <li><span class="spec-label">Max Zoom</span><span class="spec-value">120×</span></li>
+                            <li><span class="spec-label">Mount</span><span class="spec-value">Alt-Azimuth</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">₹7,000</span>
+                            <button class="btn btn-small" id="buy-60mm">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 — Featured -->
+                <div class="product-card product-card-featured reveal-up" id="product-75mm" style="--delay: 0.15s">
+                    <div class="product-badge product-badge-gold">Popular</div>
+                    <div class="product-image">
+                        <img src="images/telescope-75mm.png" alt="UNIVERSIA FNOS Series 75mm Refractor Telescope" loading="lazy">
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">FNOS 75mm</h3>
+                        <p class="product-type">Achromatic Refractor</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Focal Length</span><span class="spec-value">500mm</span></li>
+                            <li><span class="spec-label">Aperture</span><span class="spec-value">75mm</span></li>
+                            <li><span class="spec-label">Max Zoom</span><span class="spec-value">150×</span></li>
+                            <li><span class="spec-label">Mount</span><span class="spec-value">Alt-Azimuth</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">₹9,000</span>
+                            <button class="btn btn-primary btn-small" id="buy-75mm">Get This</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card reveal-up" id="product-127mm" style="--delay: 0.3s">
+                    <div class="product-badge">Advanced</div>
+                    <div class="product-image">
+                        <img src="images/telescope-127mm.png" alt="UNIVERSIA FNOS Series 127mm Reflector Telescope" loading="lazy">
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">FNOS 127mm</h3>
+                        <p class="product-type">Spherical Reflector</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Focal Length</span><span class="spec-value">900mm</span></li>
+                            <li><span class="spec-label">Aperture</span><span class="spec-value">127mm</span></li>
+                            <li><span class="spec-label">Max Zoom</span><span class="spec-value">254×</span></li>
+                            <li><span class="spec-label">Mount</span><span class="spec-value">Alt-Azimuth</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="product-price">₹17,000</span>
+                            <button class="btn btn-small" id="buy-127mm">Level Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- EXPERIENCES SECTION                         -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="experiences" class="experiences-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">Upcoming Events</span>
+                <h2 class="section-heading reveal-up">
+                    Nights you won't<br>
+                    <em>forget</em>
+                </h2>
+            </div>
+            <div class="experiences-grid">
+                <!-- Experience 1 -->
+                <div class="experience-card reveal-up" id="exp-nagtibba">
+                    <div class="experience-image">
+                        <img src="images/stargazing-event.png" alt="Star gazing at Nagtibba with Universia" loading="lazy">
+                        <div class="experience-date">
+                            <span class="date-label">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="experience-info">
+                        <span class="experience-category">Stargazing Trip</span>
+                        <h3 class="experience-title">Star Gazing at Nagtibba</h3>
+                        <p class="experience-desc">
+                            Join us for an immersive journey through the night sky at one of Uttarakhand's 
+                            highest peaks. Pitch your tent at 9,915 ft and watch the Milky Way come alive 
+                            like you've never seen before.
+                        </p>
+                        <a href="https://wa.me/+917307556533?text=Hi%20I'm%20interested%20in%20the%20Nagtibba%20stargazing%20trip" class="btn btn-outline btn-small" id="book-nagtibba" target="_blank" rel="noopener">Book Your Spot</a>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="experience-card experience-card-wide reveal-up" id="exp-birthday" style="--delay: 0.15s">
+                    <div class="experience-image">
+                        <img src="images/birthday-stars.png" alt="Birthday celebration under the stars with Universia" loading="lazy">
+                        <div class="experience-date">
+                            <span class="date-label">On Demand</span>
+                        </div>
+                    </div>
+                    <div class="experience-info">
+                        <span class="experience-category">Special Event</span>
+                        <h3 class="experience-title">Birthday Under the Stars</h3>
+                        <p class="experience-desc">
+                            Forget the usual party venues. Celebrate your birthday at Nagtibba 
+                            with telescopes, the Milky Way as your ceiling, and the Himalayas 
+                            as your backdrop. Cake tastes better at 9,000 feet.
+                        </p>
+                        <a href="https://wa.me/+917307556533?text=Hi%20I'd%20like%20to%20book%20a%20birthday%20under%20the%20stars" class="btn btn-outline btn-small" id="book-birthday" target="_blank" rel="noopener">Plan Your Night</a>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="experience-card reveal-up" id="exp-moon" style="--delay: 0.3s">
+                    <div class="experience-image">
+                        <img src="images/moon-closeup.png" alt="Moon gazing session with Universia in Bidholi" loading="lazy">
+                        <div class="experience-date">
+                            <span class="date-label">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="experience-info">
+                        <span class="experience-category">Moon Session</span>
+                        <h3 class="experience-title">Moon Gazing in Bidholi</h3>
+                        <p class="experience-desc">
+                            See the Moon in all its glory through our advanced FNOS 127mm telescope. 
+                            Craters, maria, and mountain ranges — visible in stunning detail right 
+                            from our Dehradun campus.
+                        </p>
+                        <a href="https://wa.me/+917307556533?text=Hi%20I'm%20interested%20in%20the%20Moon%20gazing%20session" class="btn btn-outline btn-small" id="book-moon" target="_blank" rel="noopener">Notify Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- GALLERY SECTION                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag reveal-up">Through Our Lenses</span>
+                <h2 class="section-heading reveal-up">
+                    What you'll see<br>
+                    <em>up there</em>
+                </h2>
+            </div>
+            <div class="gallery-grid reveal-up">
+                <div class="gallery-item gallery-item-tall" id="gallery-1">
+                    <img src="images/moon-closeup.png" alt="Detailed lunar surface through telescope" loading="lazy">
+                    <div class="gallery-caption">
+                        <span>The Moon</span>
+                        <small>FNOS 127mm · Dehradun</small>
+                    </div>
+                </div>
+                <div class="gallery-item" id="gallery-2">
+                    <img src="images/saturn.png" alt="Saturn and its rings through telescope" loading="lazy">
+                    <div class="gallery-caption">
+                        <span>Saturn</span>
+                        <small>FNOS 127mm · Nagtibba</small>
+                    </div>
+                </div>
+                <div class="gallery-item" id="gallery-3">
+                    <img src="images/jupiter.png" alt="Jupiter and its cloud bands through telescope" loading="lazy">
+                    <div class="gallery-caption">
+                        <span>Jupiter</span>
+                        <small>FNOS 75mm · Bidholi</small>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-wide" id="gallery-4">
+                    <img src="images/nebula.png" alt="Orion Nebula deep sky photography" loading="lazy">
+                    <div class="gallery-caption">
+                        <span>Orion Nebula</span>
+                        <small>Deep Sky · Long Exposure</small>
+                    </div>
+                </div>
+                <div class="gallery-item" id="gallery-5">
+                    <img src="images/stargazing-event.png" alt="Universia community stargazing event" loading="lazy">
+                    <div class="gallery-caption">
+                        <span>Community Night</span>
+                        <small>Nagtibba Camp · 2024</small>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-tall" id="gallery-6">
+                    <img src="images/hero-bg.png" alt="Milky Way over Himalayan mountains" loading="lazy">
+                    <div class="gallery-caption">
+                        <span>Milky Way</span>
+                        <small>Uttarakhand · 14mm f/2.8</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- TESTIMONIALS SECTION                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag reveal-up">Reviews</span>
+                <h2 class="section-heading reveal-up">
+                    What fellow stargazers<br>
+                    <em>are saying</em>
+                </h2>
+            </div>
+            <div class="testimonials-track reveal-up">
+                <div class="testimonial-card" id="testimonial-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The Nagtibba trip was life-changing. I saw the Milky Way with my naked eyes for 
+                        the first time. Satyansh and the team made everything so comfortable and educational. 
+                        Can't wait for the next one!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <span class="author-name">Aarav Sharma</span>
+                            <span class="author-detail">Nagtibba Trip · Nov 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" id="testimonial-2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Bought the FNOS 75mm as my first telescope. The quality at this price is 
+                        incredible — I've already spotted Jupiter's moons and Saturn's rings from 
+                        my terrace in Delhi. The team helped me set it up over a video call!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <span class="author-name">Priya Mehta</span>
+                            <span class="author-detail">FNOS 75mm Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" id="testimonial-3">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "We booked the birthday-under-the-stars package for my son's 12th birthday. 
+                        He's been obsessed with space ever since. The craters on the Moon through the 
+                        127mm scope were jaw-dropping. Worth every rupee."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <span class="author-name">Rahul Kapoor</span>
+                            <span class="author-detail">Birthday Event · Jan 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" id="testimonial-4">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "As a UPES student, having Universia right here in Dehradun is a blessing. 
+                        Their workshops taught me astrophotography basics and now I shoot the Moon 
+                        through my phone adapter. Incredible community."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">N</div>
+                        <div class="author-info">
+                            <span class="author-name">Neha Joshi</span>
+                            <span class="author-detail">Workshop Attendee · UPES</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CONTACT SECTION                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-info reveal-up">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-heading">
+                        Ready to explore<br>
+                        <em>the cosmos?</em>
+                    </h2>
+                    <p class="contact-description">
+                        Whether you want to buy a telescope, book a stargazing trip, or just chat 
+                        about the next meteor shower — we'd love to hear from you.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <strong>Visit Us</strong>
+                                <p>Runway UPES Block-1, Premnagar<br>Dehradun 248007, Uttarakhand</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <strong>Call / WhatsApp</strong>
+                                <p><a href="tel:+917307556533">+91 7307 556 533</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:thevastexplore@gmail.com">thevastexplore@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📸</span>
+                            <div>
+                                <strong>Follow Us</strong>
+                                <p><a href="https://www.instagram.com/Universiauni/" target="_blank" rel="noopener">@Universiauni on Instagram</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap reveal-up" style="--delay: 0.15s">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" name="fullName" placeholder="e.g. Aarav Sharma" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" placeholder="aarav@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-phone">Phone</label>
+                                <input type="tel" id="contact-phone" name="mobile" placeholder="+91 98765 43210">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Subject</label>
+                                <select id="contact-subject" name="subject">
+                                    <option value="">What's this about?</option>
+                                    <option value="telescope">Buying a Telescope</option>
+                                    <option value="stargazing">Stargazing Trip</option>
+                                    <option value="birthday">Birthday Event</option>
+                                    <option value="workshop">Workshop Inquiry</option>
+                                    <option value="other">Something Else</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" placeholder="Tell us what you're curious about..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="contact-submit">
+                            Send Message
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FOOTER                                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#hero" class="logo">
+                        <span class="logo-mark">✦</span>
+                        <span class="logo-text">UNIVERSIA</span>
+                    </a>
+                    <p class="footer-tagline">Revolutionizing astronomy in India, one telescope at a time.</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#products">Telescopes</a></li>
+                            <li><a href="#experiences">Experiences</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Events</h4>
+                        <ul>
+                            <li><a href="#experiences">Nagtibba Stargazing</a></li>
+                            <li><a href="#experiences">Birthday Under Stars</a></li>
+                            <li><a href="#experiences">Moon Sessions</a></li>
+                            <li><a href="#contact">Custom Events</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://www.instagram.com/Universiauni/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://wa.me/+917307556533" target="_blank" rel="noopener">WhatsApp</a></li>
+                            <li><a href="mailto:thevastexplore@gmail.com">Email</a></li>
+                            <li><a href="tel:+917307556533">Call Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Universia. All rights reserved. Made with ♡ in Dehradun.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+917307556533" class="whatsapp-fab" id="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+            <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.132 6.742 3.054 9.378L1.054 31.2l6.094-1.952A15.9 15.9 0 0016.004 32C24.826 32 32 24.826 32 16.004S24.826 0 16.004 0zm9.31 22.606c-.388 1.094-1.938 2.002-3.148 2.266-.828.178-1.91.32-5.554-1.194-4.664-1.936-7.664-6.664-7.898-6.974-.224-.31-1.882-2.508-1.882-4.784s1.19-3.396 1.612-3.862c.388-.428 1.028-.622 1.642-.622.198 0 .376.01.536.018.47.02.706.048 1.016.788.388.924 1.332 3.244 1.448 3.48.118.234.232.548.076.858-.148.318-.278.46-.512.728-.234.268-.456.474-.69.764-.212.254-.45.526-.192.996.258.46 1.148 1.89 2.464 3.062 1.692 1.506 3.118 1.972 3.558 2.19.34.168.744.134 1.014-.158.34-.37.762-.984 1.19-1.59.306-.432.692-.486 1.064-.332.378.148 2.394 1.128 2.804 1.334.41.206.682.31.782.478.098.168.098.968-.29 2.062z"/>
+        </svg>
+    </a>
+
+    <!-- Gallery Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <img src="" alt="" id="lightbox-img" class="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
