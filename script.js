@@ -684,15 +684,25 @@
         // Disable Right-Click
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // Disable DevTools shortcuts (F12, Ctrl+Shift+I, Ctrl+U)
+        // Disable DevTools shortcuts (F12, Ctrl+Shift+I, Ctrl+U, Cmd+Opt+I, Cmd+Opt+U)
         document.addEventListener('keydown', (e) => {
             if (e.keyCode === 123) { // F12
                 e.preventDefault();
             }
-            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { // I, J, C
+            // Windows/Linux: Ctrl + Shift + I/J/C
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { 
                 e.preventDefault();
             }
-            if (e.ctrlKey && e.keyCode === 85) { // U
+            // Windows/Linux: Ctrl + U (View Source)
+            if (e.ctrlKey && e.keyCode === 85) { 
+                e.preventDefault();
+            }
+            // Mac: Cmd + Opt + I/J/C
+            if (e.metaKey && e.altKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                e.preventDefault();
+            }
+            // Mac: Cmd + Opt + U (View Source)
+            if (e.metaKey && e.altKey && e.keyCode === 85) {
                 e.preventDefault();
             }
         });
