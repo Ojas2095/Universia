@@ -2168,3 +2168,152 @@ h1, h2, h3, h4 {
         gap: 24px;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   E-COMMERCE PRODUCT PAGES (WHITE THEME)
+   ═══════════════════════════════════════════════════════════════ */
+.ecommerce-page {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.ecommerce-nav {
+    background-color: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid #eaeaea;
+}
+.ecommerce-nav .nav-link {
+    color: #333;
+}
+.ecommerce-nav .nav-link:hover {
+    color: #000;
+}
+.ecommerce-nav .logo-img {
+    filter: invert(1);
+}
+
+.product-showcase {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+.product-showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.product-gallery {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+}
+.product-main-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f7;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.product-main-image img {
+    width: 100%;
+    display: block;
+    mix-blend-mode: multiply; /* Removes white background if any */
+}
+
+.product-details-pane {
+    display: flex;
+    flex-direction: column;
+}
+.product-breadcrumbs {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.product-breadcrumbs a {
+    color: #666;
+    text-decoration: none;
+}
+.product-breadcrumbs a:hover {
+    color: #000;
+}
+.ecommerce-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #111;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+.ecommerce-price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 24px;
+}
+
+.razorpay-checkout-container {
+    margin: 32px 0;
+    padding: 32px 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+.razorpay-placeholder {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.ecommerce-description {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.ecommerce-specs {
+    margin-bottom: 40px;
+}
+.ecommerce-specs h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #111;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+.ecommerce-specs ul {
+    list-style: none;
+    padding: 0;
+}
+.ecommerce-specs li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+}
+.ecommerce-specs li strong {
+    color: #222;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .product-showcase-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .product-gallery {
+        position: relative;
+        top: 0;
+    }
+    .ecommerce-title {
+        font-size: 2.5rem;
+    }
+}
