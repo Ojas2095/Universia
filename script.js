@@ -679,8 +679,28 @@
         });
     }
 
+    // ─── Security Hardening ────────────────────────────────────
+    function initSecurity() {
+        // Disable Right-Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable DevTools shortcuts (F12, Ctrl+Shift+I, Ctrl+U)
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode === 123) { // F12
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { // I, J, C
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.keyCode === 85) { // U
+                e.preventDefault();
+            }
+        });
+    }
+
     // ─── Initialize Everything ─────────────────────────────────
     function init() {
+        initSecurity();
         initCustomCursor();
         initPreloader();
         initStarCanvas();
