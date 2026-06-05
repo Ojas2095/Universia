@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://checkout.razorpay.com; connect-src 'self' https:;">
-    <meta name="description" content="Universia — India's community of space enthusiasts. Premium telescopes, stargazing sessions in the Himalayas, and astronomical workshops. Bringing the universe closer to you.">
-    <meta name="keywords" content="telescopes, astronomy, stargazing, India, Dehradun, astrophotography, Universia, FNOS">
+    <meta name="description" content="Cosma — India's community of space enthusiasts. Premium telescopes, stargazing sessions in the Himalayas, and astronomical workshops. Bringing the universe closer to you.">
+    <meta name="keywords" content="telescopes, astronomy, stargazing, India, Dehradun, astrophotography, Cosma, FNOS">
     
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.universia.in/">
-    <meta property="og:title" content="Universia — Revolutionizing Astronomy in India">
+    <meta property="og:url" content="https://www.Cosma.in/">
+    <meta property="og:title" content="Cosma — Revolutionizing Astronomy in India">
     <meta property="og:description" content="A community of stargazers, dreamers, and explorers. We build telescopes, host night-sky sessions in the Himalayas, and make astronomy accessible to everyone.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Ojas2095/Universia/master/images/hero-earth.jpg">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Ojas2095/Cosma/master/images/hero-earth.jpg">
     <meta name="twitter:card" content="summary_large_image">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/cosma-logo.png">
 
-    <title>Universia — Revolutionizing Astronomy in India</title>
+    <title>Cosma — Revolutionizing Astronomy in India</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -46,12 +46,33 @@
     </div>
 
     <!-- ═══════════════════════════════════════════ -->
+    <!-- CART DRAWER                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="cart-close" aria-label="Close Cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Cart Items Rendered via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <a href="#" id="checkout-btn" class="btn-checkout">Checkout via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
     <!-- NAVIGATION                                  -->
     <!-- ═══════════════════════════════════════════ -->
     <header id="site-header" class="site-header">
         <div class="header-inner">
             <a href="#hero" class="logo" id="logo">
-                <img src="images/logo.png" alt="Universia Logo" class="logo-img">
+                <img src="images/cosma-logo.png" alt="Cosma Logo" class="logo-img">
             </a>
             <nav class="main-nav" id="main-nav">
                 <ul class="nav-links">
@@ -64,11 +85,17 @@
                     <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="header-actions">
+                <button class="nav-cart-btn open-cart" aria-label="Open Cart">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -114,8 +141,8 @@
                         <em>for the night sky</em>
                     </h2>
                     <p class="about-description reveal-up">
-                        Welcome to Universia, a thriving community of space enthusiasts united by a shared 
-                        passion for the cosmos. At Universia, we aim to inspire curiosity and promote the 
+                        Welcome to Cosma, a thriving community of space enthusiasts united by a shared 
+                        passion for the cosmos. At Cosma, we aim to inspire curiosity and promote the 
                         wonders of astronomy across the nation.
                     </p>
                     <p class="about-description reveal-up">
@@ -124,7 +151,7 @@
                         and astronomical workshops to explore the science and beauty of the cosmos.
                     </p>
                     <p class="about-description reveal-up">
-                        Whether you're a seasoned astronomer or just starting your journey, Universia offers 
+                        Whether you're a seasoned astronomer or just starting your journey, Cosma offers 
                         a gateway to the stars, creating unforgettable experiences that spark a lifelong love 
                         for space exploration. Join us, and let's discover the universe together!
                     </p>
@@ -146,10 +173,10 @@
                 <div class="about-visual reveal-up">
                     <div class="about-image-stack">
                         <div class="about-img about-img-main">
-                            <img src="images/about/photo1.jpg" alt="Universia community stargazing" loading="lazy">
+                            <img src="images/about/photo1.jpg" alt="Cosma community stargazing" loading="lazy">
                         </div>
                         <div class="about-img about-img-accent">
-                            <img src="images/about/7.jpg" alt="Moon photographed through a Universia telescope" loading="lazy">
+                            <img src="images/about/7.jpg" alt="Moon photographed through a Cosma telescope" loading="lazy">
                         </div>
                         <div class="about-decoration">
                             <svg viewBox="0 0 200 200" class="orbit-ring">
@@ -164,15 +191,15 @@
             <!-- About Photo Strip -->
             <div class="about-photos reveal-up">
                 <div class="about-photos-scroll">
-                    <div class="about-photo-item"><img src="images/about/photo1.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/photo21.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/photo3.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/photo4.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/photo5.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/6.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/8.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/9.jpg" alt="Universia moment" loading="lazy"></div>
-                    <div class="about-photo-item"><img src="images/about/10.jpg" alt="Universia moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo1.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo21.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo3.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo4.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/photo5.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/6.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/8.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/9.jpg" alt="Cosma moment" loading="lazy"></div>
+                    <div class="about-photo-item"><img src="images/about/10.jpg" alt="Cosma moment" loading="lazy"></div>
                 </div>
             </div>
         </div>
@@ -188,7 +215,7 @@
                 <h2 class="section-heading reveal-up">
                     Our<br><em>Team</em>
                 </h2>
-                <p class="section-subtext reveal-up">The amateur astronomers behind Universia</p>
+                <p class="section-subtext reveal-up">The amateur astronomers behind Cosma</p>
             </div>
             <div class="team-accordion">
                 <div class="team-slice reveal-up" id="team-satyansh">
@@ -202,10 +229,10 @@
                         </div>
                         <div class="slice-body">
                             <p class="team-bio">
-                                Satyansh is the visionary Founder and CEO of Universia. With over half a decade of 
+                                Satyansh is the visionary Founder and CEO of Cosma. With over half a decade of 
                                 experience as an astrophotographer and independent astronomer, he combines his passion 
                                 for exploring the cosmos with his entrepreneurial spirit. Under his leadership, 
-                                Universia has become a thriving community for space enthusiasts.
+                                Cosma has become a thriving community for space enthusiasts.
                             </p>
                             <div class="slice-easter-egg">
                                 <span class="detail-label">Favorite Constellation:</span>
@@ -226,10 +253,10 @@
                         </div>
                         <div class="slice-body">
                             <p class="team-bio">
-                                Pranjal brings creativity and precision to Universia as Product Designer. With a 
+                                Pranjal brings creativity and precision to Cosma as Product Designer. With a 
                                 passion for blending aesthetics and functionality, Pranjal plays a pivotal role in 
                                 designing cutting-edge products that enhance the stargazing experience, ensuring that 
-                                every telescope reflects Universia's commitment to quality.
+                                every telescope reflects Cosma's commitment to quality.
                             </p>
                             <div class="slice-easter-egg">
                                 <span class="detail-label">Favorite Telescope:</span>
@@ -250,7 +277,7 @@
                         </div>
                         <div class="slice-body">
                             <p class="team-bio">
-                                Raghvendra is a visionary Product Engineer at Universia, dedicated to the development 
+                                Raghvendra is a visionary Product Engineer at Cosma, dedicated to the development 
                                 of advanced telescopes. With a deep understanding of engineering principles and a 
                                 passion for innovation, Raghvendra designs and refines cutting-edge optical technologies 
                                 for unparalleled telescope performance.
@@ -287,7 +314,7 @@
                 <div class="product-card tilt-card reveal-up" id="product-60mm" onclick="window.location.href='product-60mm.html'" style="cursor: pointer;">
                     <div class="product-badge">Beginner</div>
                     <div class="product-image">
-                        <img src="images/products/fnos-60mm.jpg" alt="UNIVERSIA FNOS Series 60mm Refractor Telescope" loading="lazy">
+                        <img src="images/products/fnos-60mm.jpg" alt="Cosma FNOS Series 60mm Refractor Telescope" loading="lazy">
                         <div class="product-glow"></div>
                     </div>
                     <div class="product-info">
@@ -310,7 +337,7 @@
                 <div class="product-card tilt-card product-card-featured reveal-up" id="product-75mm" style="--delay: 0.15s; cursor: pointer;" onclick="window.location.href='product-75mm.html'">
                     <div class="product-badge product-badge-gold">Popular</div>
                     <div class="product-image">
-                        <img src="images/products/fnos-75mm.jpg" alt="UNIVERSIA FNOS Series 75mm Refractor Telescope" loading="lazy">
+                        <img src="images/products/fnos-75mm.jpg" alt="Cosma FNOS Series 75mm Refractor Telescope" loading="lazy">
                         <div class="product-glow"></div>
                     </div>
                     <div class="product-info">
@@ -333,7 +360,7 @@
                 <div class="product-card tilt-card reveal-up" id="product-127mm" style="--delay: 0.3s; cursor: pointer;" onclick="window.location.href='product-127mm.html'">
                     <div class="product-badge">Advanced</div>
                     <div class="product-image">
-                        <img src="images/products/fnos-127mm.jpg" alt="UNIVERSIA FNOS Series 127mm Reflector Telescope" loading="lazy">
+                        <img src="images/products/fnos-127mm.jpg" alt="Cosma FNOS Series 127mm Reflector Telescope" loading="lazy">
                         <div class="product-glow"></div>
                     </div>
                     <div class="product-info">
@@ -371,7 +398,7 @@
                 <!-- Experience 1 — Nagtibba -->
                 <div class="experience-card tilt-card reveal-up" id="exp-nagtibba">
                     <div class="experience-image">
-                        <img src="images/events/1.jpg" alt="Star gazing at Nagtibba with Universia" loading="lazy">
+                        <img src="images/events/1.jpg" alt="Star gazing at Nagtibba with Cosma" loading="lazy">
                         <div class="experience-date">
                             <span class="date-label">Coming Soon</span>
                         </div>
@@ -391,7 +418,7 @@
                 <!-- Experience 2 — Birthday -->
                 <div class="experience-card tilt-card experience-card-wide reveal-up" id="exp-birthday" style="--delay: 0.15s">
                     <div class="experience-image">
-                        <img src="images/events/3.jpg" alt="Birthday celebration under the stars with Universia" loading="lazy">
+                        <img src="images/events/3.jpg" alt="Birthday celebration under the stars with Cosma" loading="lazy">
                         <div class="experience-date">
                             <span class="date-label">On Demand</span>
                         </div>
@@ -411,7 +438,7 @@
                 <!-- Experience 3 — Moon Gazing -->
                 <div class="experience-card tilt-card reveal-up" id="exp-moon" style="--delay: 0.3s">
                     <div class="experience-image">
-                        <img src="images/events/2.jpg" alt="Moon gazing session with Universia in Bidholi" loading="lazy">
+                        <img src="images/events/2.jpg" alt="Moon gazing session with Cosma in Bidholi" loading="lazy">
                         <div class="experience-date">
                             <span class="date-label">Coming Soon</span>
                         </div>
@@ -453,54 +480,54 @@
 
             <div class="gallery-masonry reveal-up" id="gallery-grid">
                 <!-- Row 1 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/1.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/2.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/3.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/4.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/1.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/2.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/3.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/4.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 2 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/5.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/7.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/8.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/9.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/5.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/7.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/8.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/9.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 3 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/11.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/12.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/13.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/14.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/11.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/12.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/13.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/14.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 4 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/15.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/16.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/17.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/18.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/15.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/16.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/17.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/18.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 5 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/19.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/20.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/21.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/22.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/19.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/20.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/21.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/22.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 6 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/23.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/24.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/25.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/26.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/23.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/24.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/25.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/26.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 7 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/27.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/28.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/29.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/30.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/27.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/28.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/29.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/30.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 8 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/31.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/32.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/33.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/34.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/31.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/32.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/33.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/34.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 9 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/35.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/36.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/37.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/38.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/35.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/36.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/37.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/38.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Row 10 -->
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/39.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/40.jpg" alt="Space captured by Universia" loading="lazy"></div>
-                <div class="gallery-item" data-type="photo"><img src="images/gallery/41.jpg" alt="Space captured by Universia" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/39.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/40.jpg" alt="Space captured by Cosma" loading="lazy"></div>
+                <div class="gallery-item" data-type="photo"><img src="images/gallery/41.jpg" alt="Space captured by Cosma" loading="lazy"></div>
                 <!-- Videos -->
                 <div class="gallery-item gallery-video-item" data-type="video">
                     <video src="videos/gallery/1.mp4" preload="metadata" muted></video>
@@ -628,7 +655,7 @@
                             <span class="contact-icon">📸</span>
                             <div>
                                 <strong>Follow Us</strong>
-                                <p><a href="https://www.instagram.com/Universiauni/" target="_blank" rel="noopener">@Universiauni on Instagram</a></p>
+                                <p><a href="https://www.instagram.com/Cosmauni/" target="_blank" rel="noopener">@Cosmauni on Instagram</a></p>
                             </div>
                         </div>
                     </div>
@@ -699,7 +726,7 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Is there a warranty on the FNOS series? <span class="faq-icon">+</span></button>
-                    <div class="faq-answer"><p>Yes! Every Universia FNOS telescope comes with a 1-year warranty covering optical alignment and manufacturing defects.</p></div>
+                    <div class="faq-answer"><p>Yes! Every Cosma FNOS telescope comes with a 1-year warranty covering optical alignment and manufacturing defects.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Can I take photos through these telescopes? <span class="faq-icon">+</span></button>
@@ -736,7 +763,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="#hero" class="logo">
-                        <img src="images/logo.png" alt="Universia Logo" class="logo-img">
+                        <img src="images/cosma-logo.png" alt="Cosma Logo" class="logo-img">
                     </a>
                     <p class="footer-tagline">Revolutionizing astronomy in India, one telescope at a time.</p>
                 </div>
@@ -763,7 +790,7 @@
                     <div class="footer-col">
                         <h4>Connect</h4>
                         <ul>
-                            <li><a href="https://www.instagram.com/Universiauni/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://www.instagram.com/Cosmauni/" target="_blank" rel="noopener">Instagram</a></li>
                             <li><a href="https://wa.me/+917307556533" target="_blank" rel="noopener">WhatsApp</a></li>
                             <li><a href="mailto:thevastexplore@gmail.com">Email</a></li>
                             <li><a href="tel:+917307556533">Call Us</a></li>
@@ -772,7 +799,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Universia. All rights reserved. Made with ♡ in Dehradun.</p>
+                <p>&copy; 2024 Cosma. All rights reserved. Made with ♡ in Dehradun.</p>
             </div>
         </div>
     </footer>

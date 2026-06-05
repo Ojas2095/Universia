@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://checkout.razorpay.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://checkout.razorpay.com; connect-src 'self' https:;">
-    <title>FNOS 127mm Reflector Telescope - Universia</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval' data:;">
+    <title>FNOS 127mm Reflector Telescope - Cosma</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +23,16 @@
     <nav class="navbar ecommerce-nav">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Universia Logo" class="logo-img">
+                <img src="images/cosma-logo.png" alt="Cosma Logo" class="logo-img">
             </a>
-            <div class="nav-links">
+            <div class="nav-links" style="display: flex; gap: 20px; align-items: center;">
                 <a href="index.html#products" class="nav-link">← Back to Store</a>
+                <button class="nav-cart-btn open-cart" aria-label="Open Cart">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -50,6 +56,11 @@
                 
                 <h1 class="ecommerce-title">FNOS 127mm Reflector</h1>
                 <div class="ecommerce-price">₹17,000</div>
+
+                <!-- CART BUTTON -->
+                <button class="btn-add-to-cart add-to-cart-btn" data-id="fnos-127mm" data-name="FNOS 127mm Reflector" data-price="16000" data-img="images/products/fnos-127mm.jpg">
+                    Add to Cart
+                </button>
 
                 <!-- RAZORPAY CHECKOUT AREA -->
                 <div class="razorpay-checkout-container">
@@ -91,5 +102,28 @@
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CART DRAWER                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="cart-close" aria-label="Close Cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Cart Items Rendered via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <a href="#" id="checkout-btn" class="btn-checkout">Checkout via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 </body>
 </html>

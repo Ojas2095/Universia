@@ -708,6 +708,119 @@
         });
     }
 
+    // ─── Cart System ───────────────────────────────────────────
+    function initCart() {
+        let cart = JSON.parse(localStorage.getItem('cosma_cart')) || [];
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartTotalEl = document.getElementById('cart-total-price');
+        const cartCountEls = document.querySelectorAll('.cart-count');
+        
+        // Open/Close logic
+        const openCartBtns = document.querySelectorAll('.open-cart');
+        const closeCartBtns = document.querySelectorAll('.cart-close');
+        
+        openCartBtns.forEach(btn => btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartDrawer.classList.add('open');
+            cartOverlay.classList.add('active');
+            renderCart();
+        }));
+        
+        function closeCart() {
+            cartDrawer.classList.remove('open');
+            cartOverlay.classList.remove('active');
+        }
+        
+        closeCartBtns.forEach(btn => btn.addEventListener('click', closeCart));
+        if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+
+        // Add to cart logic
+        const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.dataset.id;
+                const name = btn.dataset.name;
+                const price = parseInt(btn.dataset.price);
+                const img = btn.dataset.img;
+                
+                const existing = cart.find(item => item.id === id);
+                if (existing) {
+                    existing.quantity += 1;
+                } else {
+                    cart.push({ id, name, price, img, quantity: 1 });
+                }
+                saveCart();
+                cartDrawer.classList.add('open');
+                if (cartOverlay) cartOverlay.classList.add('active');
+            });
+        });
+
+        // Global function to remove item
+        window.removeFromCart = function(id) {
+            cart = cart.filter(item => item.id !== id);
+            saveCart();
+        };
+
+        function saveCart() {
+            localStorage.setItem('cosma_cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function renderCart() {
+            if (!cartItemsContainer) return;
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+            } else {
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    count += item.quantity;
+                    const el = document.createElement('div');
+                    el.className = 'cart-item';
+                    el.innerHTML = `
+                        <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')} x ${item.quantity}</div>
+                            <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">Remove</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(el);
+                });
+            }
+
+            if (cartTotalEl) cartTotalEl.innerText = `₹${total.toLocaleString('en-IN')}`;
+            cartCountEls.forEach(el => el.innerText = count);
+            
+            // Setup Checkout Button
+            const checkoutBtn = document.getElementById('checkout-btn');
+            if (checkoutBtn) {
+                if (cart.length === 0) {
+                    checkoutBtn.style.opacity = '0.5';
+                    checkoutBtn.style.pointerEvents = 'none';
+                    checkoutBtn.href = '#';
+                } else {
+                    checkoutBtn.style.opacity = '1';
+                    checkoutBtn.style.pointerEvents = 'auto';
+                    let msg = "Hi Cosma team! I would like to checkout my cart:\\n\\n";
+                    cart.forEach(item => {
+                        msg += `- ${item.name} (x${item.quantity}) - ₹${(item.price * item.quantity).toLocaleString('en-IN')}\\n`;
+                    });
+                    msg += `\\nTotal: ₹${total.toLocaleString('en-IN')}\\n\\nPlease send me a payment link!`;
+                    checkoutBtn.href = `https://wa.me/+917307556533?text=${encodeURIComponent(msg)}`;
+                }
+            }
+        }
+        
+        // Initial render to set badge count
+        renderCart();
+    }
+
     // ─── Initialize Everything ─────────────────────────────────
     function init() {
         initSecurity();
@@ -726,6 +839,7 @@
         initFAQ();
         initTiltCards();
         initNewsletterForm();
+        initCart();
 
         // Trigger reveal for elements already in viewport
         setTimeout(() => {

@@ -1,8 +1,8 @@
-# Universia
+# Cosma
 
 **Revolutionizing Astronomy in India**
 
-Universia is a thriving community of space enthusiasts united by a shared passion for the cosmos. We bring the universe closer through high-quality telescopes, stargazing sessions under breathtaking night skies, and astronomical workshops.
+Cosma is a thriving community of space enthusiasts united by a shared passion for the cosmos. We bring the universe closer through high-quality telescopes, stargazing sessions under breathtaking night skies, and astronomical workshops.
 
 ## About
 
@@ -20,6 +20,6 @@ Pure HTML5 + CSS3 + Vanilla JavaScript. No frameworks, no build tools — fast a
 - 📍 Runway UPES Block-1, Premnagar, Dehradun 248007, Uttarakhand
 - 📞 +91 7307556533
 - 📧 thevastexplore@gmail.com
-- 📸 [@Universiauni](https://www.instagram.com/Universiauni/)
+- 📸 [@Cosmauni](https://www.instagram.com/Cosmauni/)
 
-© 2024 Universia. All rights reserved.
+© 2024 Cosma. All rights reserved.
